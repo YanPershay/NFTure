@@ -1,5 +1,6 @@
 ﻿using NFTure.Core.Entities;
 using NFTure.Core.Interfaces.Repositories;
+using NFTure.Core.Specifications.NFT;
 using NFTure.Infrastructure.Data;
 using NFTure.Infrastructure.Repositories.Base;
 
@@ -11,9 +12,10 @@ namespace NFTure.Infrastructure.Repositories
         {
         }
 
-        public Task<IReadOnlyList<Nft>> GetAllUserNfts(Guid userId)
+        public async Task<IReadOnlyList<Nft>> GetAllUserNfts(Guid userId)
         {
-            throw new NotImplementedException();
+            var spec = new NftByOwnerIdSpecification(userId);
+            return await GetAsync(spec);
         }
     }
 }

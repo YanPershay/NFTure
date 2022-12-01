@@ -16,6 +16,7 @@ services.AddRazorPages();
 services.AddDbContext<NftureContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 services.AddScoped<INftRepository, NftRepository>();
+services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
 
 var app = builder.Build();
 

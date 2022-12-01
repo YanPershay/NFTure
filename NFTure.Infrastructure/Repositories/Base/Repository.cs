@@ -1,12 +1,9 @@
 ﻿using Hexagonal.Core.Entities.Base;
 using Microsoft.EntityFrameworkCore;
 using NFTure.Core.Interfaces.Repositories.Base;
+using NFTure.Core.Specifications;
+using NFTure.Core.Specifications.Base;
 using NFTure.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NFTure.Infrastructure.Repositories.Base
 {
@@ -19,9 +16,11 @@ namespace NFTure.Infrastructure.Repositories.Base
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
-        {
-            return await _context.Set<T>().ToListAsync();
-        }
+        public async Task<IReadOnlyList<T>> GetAllAsync() => await _context.Set<T>().ToListAsync();
+
+        public async Task<IReadOnlyList<T>> GetAsync(ISpecification<T> spec) => await ApplySpecification(spec).ToListAsync();
+
+        private IQueryable<T> ApplySpecification(ISpecification<T> specification) => 
+            SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), specification);
     }
 }
