@@ -1,7 +1,21 @@
+using Hexagonal.Core.Entities.Base;
+using Microsoft.EntityFrameworkCore;
+using NFTure.Core.Interfaces.Repositories;
+using NFTure.Core.Interfaces.Repositories.Base;
+using NFTure.Infrastructure.Data;
+using NFTure.Infrastructure.Repositories;
+using NFTure.Infrastructure.Repositories.Base;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var services = builder.Services;
+
 // Add services to the container.
-builder.Services.AddRazorPages();
+services.AddRazorPages();
+
+services.AddDbContext<NftureContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+services.AddScoped<INftRepository, NftRepository>();
 
 var app = builder.Build();
 

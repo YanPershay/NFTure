@@ -1,0 +1,17 @@
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Infrastructure.deps.json
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Infrastructure.runtimeconfig.json
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Infrastructure.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Infrastructure.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Core.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Core.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.csproj.AssemblyReference.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.AssemblyInfoInputs.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.AssemblyInfo.cs
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.csproj.CoreCompileInputs.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.csproj.CopyComplete
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\refint\NFTure.Infrastructure.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.genruntimeconfig.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\ref\NFTure.Infrastructure.dll

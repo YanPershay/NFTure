@@ -1,0 +1,12 @@
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\bin\Debug\net7.0\NFTure.Application.deps.json
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\bin\Debug\net7.0\NFTure.Application.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\bin\Debug\net7.0\NFTure.Application.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.csproj.AssemblyReference.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.AssemblyInfoInputs.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.AssemblyInfo.cs
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.csproj.CoreCompileInputs.cache
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\refint\NFTure.Application.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\NFTure.Application.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure.Application\obj\Debug\net7.0\ref\NFTure.Application.dll

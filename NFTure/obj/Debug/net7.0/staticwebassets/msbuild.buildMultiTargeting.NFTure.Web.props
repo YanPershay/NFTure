@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NFTure.Web.props" />
+</Project>
