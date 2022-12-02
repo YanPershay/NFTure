@@ -30,6 +30,8 @@ if (!app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI();
 
+// TODO: order middleware correctly
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -38,5 +40,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+//TODO: find other way
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();

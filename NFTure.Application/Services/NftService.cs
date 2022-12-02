@@ -8,12 +8,12 @@ namespace NFTure.Application.Services
     public class NftService : INftService
     {
         private readonly INftRepository _nftRepository;
-        private readonly IAppLogger _logger;
+        //private readonly IAppLogger _logger;
 
-        public NftService(INftRepository nftRepository, IAppLogger logger)
+        public NftService(INftRepository nftRepository/*, IAppLogger logger*/)
         {
             _nftRepository = nftRepository;
-            _logger = logger;
+            //_logger = logger;
         }
 
         public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
