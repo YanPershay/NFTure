@@ -1,4 +1,5 @@
-﻿using NFTure.Application.Models;
+﻿using NFTure.Application.Mapper;
+using NFTure.Application.Models;
 using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
 
@@ -15,9 +16,11 @@ namespace NFTure.Application.Services
             _logger = logger;
         }
 
-        public Task<List<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
+        public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
         {
-            throw new NotImplementedException();
+            var nfts = await _nftRepository.GetAllUserNfts(ownerId);
+
+            return ObjectMapper.Mapper.Map<IEnumerable<NftModel>>(nfts);
         }
     }
 }

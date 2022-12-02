@@ -77,3 +77,12 @@ C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\refint\NFTure.Web.dll
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.pdb
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.genruntimeconfig.cache
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\ref\NFTure.Web.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\AutoMapper.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\NFTure.Application.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\NFTure.Application.pdb
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

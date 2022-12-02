@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTure.Web", "NFTure\NFTure.Web.csproj", "{E45114B8-8FAE-4F7A-8612-12033D3FDA66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Web", "NFTure\NFTure.Web.csproj", "{E45114B8-8FAE-4F7A-8612-12033D3FDA66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTure.Application", "NFTure.Application\NFTure.Application.csproj", "{CCA36D46-1B57-4176-B44C-D89B1087FC6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Application", "NFTure.Application\NFTure.Application.csproj", "{CCA36D46-1B57-4176-B44C-D89B1087FC6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTure.Core", "NFTure.Core\NFTure.Core.csproj", "{DC7156F4-E1E3-429C-8754-61BD8D0D5938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Core", "NFTure.Core\NFTure.Core.csproj", "{DC7156F4-E1E3-429C-8754-61BD8D0D5938}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTure.Infrastructure", "NFTure.Infrastructure\NFTure.Infrastructure.csproj", "{EF97B0E0-0EBE-4AE6-9EDC-B23EAFD7A521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Infrastructure", "NFTure.Infrastructure\NFTure.Infrastructure.csproj", "{EF97B0E0-0EBE-4AE6-9EDC-B23EAFD7A521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTure.Tests", "NFTure.Tests\NFTure.Tests.csproj", "{2ACE8F74-062B-4FD9-8CEA-9FF3B44C1BD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Tests", "NFTure.Tests\NFTure.Tests.csproj", "{2ACE8F74-062B-4FD9-8CEA-9FF3B44C1BD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D02CD3E-3419-4D8D-B7F2-FFC01423B9F1}"
+	ProjectSection(SolutionItems) = preProject
+		Backlog.txt = Backlog.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
