@@ -1,0 +1,12 @@
+Logging system
+Authorization Management
+Validation Management
+Session Management
+Notification Management and toasts
+Exception Management
+
+VERY HIGH SECURITY!!!!
+
+caching
+
+editor config
