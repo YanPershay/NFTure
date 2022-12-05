@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5PoHns6Tly0MJ1TG1sJJRfuo1Rt5+lE2IYCMd4Qel6/UCLtmwYUUi8aDy3Qayz7705RKogAxPn48S5hxozaejg==",
+  "dgSpecHash": "liDUYCVsZKr/WO8XSIDsIO2nLeWDWNLcei5cKlJeNBfisuACUMUUrcjliEqR7rfkuEYb1m/b7LoX1SfIZhTPQg==",
   "success": true,
   "projectFilePath": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure.Application\\NFTure.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\426Dell\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\426Dell\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",

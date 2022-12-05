@@ -17,4 +17,6 @@ rebuild after save
 
 caching
 
+localization
+
 editor config

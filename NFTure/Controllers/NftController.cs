@@ -10,12 +10,12 @@ namespace NFTure.Web.Controllers
     public class NftController : ApiController
     {
         private readonly INftService _nftService;
-        //private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public NftController(INftService nftService/*, IMapper mapper*/)
+        public NftController(INftService nftService, IMapper mapper)
         {
             _nftService = nftService;
-            //_mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -25,10 +25,10 @@ namespace NFTure.Web.Controllers
         public async Task<ActionResult<IEnumerable<NftDto>>> GetNftByOwnerId(Guid id)
         {
             var nfts = await _nftService.GetNftsByOwnerIdAsync(id);
-            return Ok();
-            //var mapped = _mapper.Map<IEnumerable<NftDto>>(nfts);
 
-            //return Ok(mapped);
+            var mapped = _mapper.Map<IEnumerable<NftDto>>(nfts);
+
+            return Ok(mapped);
         }
     }
 }

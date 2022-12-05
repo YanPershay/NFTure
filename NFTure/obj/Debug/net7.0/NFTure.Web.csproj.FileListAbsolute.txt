@@ -86,3 +86,5 @@ C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\YanPershay\TestProjects\NFTure\NFTure\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

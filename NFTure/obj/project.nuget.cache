@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "h0S8MYV/AgKLFu7+qj0wRd3KJx9tsWLwpRbk8TxjOQVUPDZm95gN1MF72EkQ6QHEF3G/1hmR+iiYMxVr/16yOg==",
+  "dgSpecHash": "kORFPNFygj8v9LxdwuTPYIPVGr+thFEtzkpHu8lC5zl9nYKlcRe3U/lPdJg6qi2ceWtmcY3tXmctx/zo5WxslA==",
   "success": true,
   "projectFilePath": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\NFTure.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\426Dell\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\426Dell\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\426Dell\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

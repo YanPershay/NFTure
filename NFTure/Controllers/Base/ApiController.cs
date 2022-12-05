@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace NFTure.Web.Controllers.Base
 {
+    // TODO: configure versioning with swagger
     [ApiVersion("1")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    public class ApiController : ControllerBase
-    {
-    }
+    public class ApiController : ControllerBase { }
 }
