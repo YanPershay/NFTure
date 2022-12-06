@@ -12,7 +12,7 @@ namespace NFTure.Infrastructure.Repositories
         {
         }
 
-        public async Task<IReadOnlyList<Nft>> GetAllUserNfts(Guid userId)
+        public async Task<IReadOnlyList<Nft>> GetAllUserNftsAsync(Guid userId)
         {
             var spec = new NftByOwnerIdSpecification(userId);
             return await GetAsync(spec);

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using NFTure.Application.Models;
-using NFTure.Web.DTOs;
+using NFTure.Web.DTOs.NFT;
 
 namespace NFTure.Web.Mapper
 {
@@ -8,7 +8,8 @@ namespace NFTure.Web.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<NftModel, NftDto>().ReverseMap();
+            CreateMap<NftModel, NftResponse>().ReverseMap();
+            CreateMap<CreateNftRequest, NftModel>().ReverseMap();
         }
     }
 }

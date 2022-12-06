@@ -5,6 +5,6 @@ namespace NFTure.Core.Interfaces.Repositories
 {
     public interface INftRepository : IRepository<Nft, Guid>
     {
-        Task<IReadOnlyList<Nft>> GetAllUserNfts(Guid userId);
+        Task<IReadOnlyList<Nft>> GetAllUserNftsAsync(Guid userId);
     }
 }

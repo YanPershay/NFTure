@@ -1,8 +1,8 @@
 ﻿using NFTure.Web.DTOs.Base;
 
-namespace NFTure.Web.DTOs
+namespace NFTure.Web.DTOs.NFT
 {
-    public class NftDto : Dto<Guid>
+    public class NftResponse : Dto<Guid>
     {
         public string ImageUrl { get; set; }
         public string? Description { get; set; }

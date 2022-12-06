@@ -26,6 +26,13 @@ namespace NFTure.Infrastructure.Repositories.Base
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
+        public async Task<T> AddAsync(T entity)
+        {
+            _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync();
+            return entity;
+        }
+
         private IQueryable<T> ApplySpecification(ISpecification<T> specification) => 
             SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), specification);
     }
