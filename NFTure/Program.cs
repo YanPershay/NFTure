@@ -25,10 +25,13 @@ if (!app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
-    foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions.Reverse())
+    foreach (var groupName in apiVersionDescriptionProvider
+                              .ApiVersionDescriptions
+                              .Reverse()
+                              .Select(d => d.GroupName))
     {
-        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
-            description.GroupName.ToUpperInvariant());
+        options.SwaggerEndpoint($"/swagger/{groupName}/swagger.json",
+            groupName.ToUpperInvariant());
     }
 });
 

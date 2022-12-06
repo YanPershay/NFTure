@@ -1,4 +1,4 @@
-﻿using Hexagonal.Core.Entities.Base;
+﻿using NFTure.Core.Entities.Base;
 using NFTure.Core.Specifications.Base;
 
 namespace NFTure.Core.Interfaces.Repositories.Base

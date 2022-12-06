@@ -1,5 +1,5 @@
-﻿using Hexagonal.Core.Entities.Base;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using NFTure.Core.Entities.Base;
 using NFTure.Core.Interfaces.Repositories.Base;
 using NFTure.Core.Specifications;
 using NFTure.Core.Specifications.Base;

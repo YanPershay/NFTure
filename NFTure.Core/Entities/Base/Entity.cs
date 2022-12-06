@@ -1,4 +1,4 @@
-﻿namespace Hexagonal.Core.Entities.Base
+﻿namespace NFTure.Core.Entities.Base
 {
     public abstract class Entity<TId> : IEntity<TId>
     {

@@ -1,4 +1,4 @@
-﻿using Hexagonal.Core.Entities.Base;
+﻿using NFTure.Core.Entities.Base;
 
 namespace NFTure.Core.Entities
 {
@@ -10,6 +10,7 @@ namespace NFTure.Core.Entities
         public string? Description { get; set; }
         public double Price { get; set; }
         public Guid OwnerId { get; set; }
+        public DateTimeOffset? CreatedDateUtc { get; set; }
 
         // public virtual User User { get; set; }
 

@@ -1,6 +1,5 @@
 ﻿using NFTure.Application.Mapper;
 using NFTure.Application.Models;
-using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
 
 namespace NFTure.Application.Services
@@ -8,12 +7,12 @@ namespace NFTure.Application.Services
     public class NftService : INftService
     {
         private readonly INftRepository _nftRepository;
+        // TODO: create logging system
         //private readonly IAppLogger _logger;
 
-        public NftService(INftRepository nftRepository/*, IAppLogger logger*/)
+        public NftService(INftRepository nftRepository)
         {
             _nftRepository = nftRepository;
-            //_logger = logger;
         }
 
         public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)

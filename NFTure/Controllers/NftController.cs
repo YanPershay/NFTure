@@ -6,7 +6,6 @@ using NFTure.Web.DTOs;
 
 namespace NFTure.Web.Controllers
 {
-    // TODO: settings for mapper and logger
     public class NftController : ApiController
     {
         private readonly INftService _nftService;
@@ -18,9 +17,14 @@ namespace NFTure.Web.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public ActionResult GetMessage() => Ok("Asalam aleikum");
-
+        /// <summary>
+        /// Returns all NFTs for user by user ID
+        /// </summary>
+        /// <remarks>
+        /// User ID must be Guid
+        /// </remarks>
+        /// <param name="id">id</param>
+        /// <response code="200">List of NFTs</response>
         [HttpGet("id")]
         public async Task<ActionResult<IEnumerable<NftDto>>> GetNftByOwnerId(Guid id)
         {

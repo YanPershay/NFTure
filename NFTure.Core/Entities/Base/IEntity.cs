@@ -1,4 +1,4 @@
-﻿namespace Hexagonal.Core.Entities.Base
+﻿namespace NFTure.Core.Entities.Base
 {
     internal interface IEntity<out TId>
     {
