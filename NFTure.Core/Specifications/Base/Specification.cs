@@ -21,12 +21,12 @@ namespace NFTure.Core.Specifications.Base
             Includes.Add(includeExpression);
         }
 
-        protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+        protected void ApplyOrderBy(Expression<Func<T, object>> orderByExpression)
         {
             OrderBy = orderByExpression;
         }
 
-        protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
+        protected void ApplyOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
         {
             OrderByDescending = orderByDescendingExpression;
         }

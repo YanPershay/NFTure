@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wogs+n64CMl/sw+KSmQHCA6LZr28n0Ars9oKVN7FswU=",
+  "Hash": "7US3aMH+I/obc+P4Dcl99l4+msmx+KKS0/PMY6tDWQY=",
   "Source": "NFTure.Web",
   "BasePath": "_content/NFTure.Web",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\bundle\\NFTure.Web.styles.css",
-      "SourceId": "NFTure.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/NFTure.Web",
-      "RelativePath": "NFTure.Web.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\bundle\\NFTure.Web.styles.css"
-    },
-    {
-      "Identity": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\NFTure.Web.bundle.scp.css",
-      "SourceId": "NFTure.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/NFTure.Web",
-      "RelativePath": "NFTure.Web.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\NFTure.Web.bundle.scp.css"
-    },
     {
       "Identity": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\wwwroot\\css\\site.css",
       "SourceId": "NFTure.Web",

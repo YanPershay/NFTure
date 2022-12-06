@@ -5,14 +5,15 @@ namespace NFTure.Core.Specifications.NFT
 {
     public class NftByOwnerIdSpecification : Specification<Nft>
     {
-        public NftByOwnerIdSpecification()
+        public NftByOwnerIdSpecification() : base(null)
         {
-            AddOrderByDescending(n => n.OwnerId);
+            ApplyOrderByDescending(n => n.CreatedDateUtc);
         }
 
         public NftByOwnerIdSpecification(Guid ownerId) : base(n => n.OwnerId.Equals(ownerId))
         {
-            AddInclude(n => n.ImageUrl);
+            // AddInclude(n => n.ImageUrl);
+            // AddInclude(n => n.User);
         }
     }
 }

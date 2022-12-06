@@ -13,7 +13,11 @@ VERY HIGH SECURITY!!!!
 
 Rate limiter
 
+cookie
+
 rebuild after save
+
+activities
 
 caching
 

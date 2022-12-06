@@ -11,21 +11,20 @@ namespace NFTure.Core.Specifications
 
             if (spec.Criteria is not null)
             {
-                _ = query.Where(spec.Criteria);
+                query = query.Where(spec.Criteria);
             }
 
             if (spec.OrderBy is not null)
             {
-                // query = query.OrderBy(spec.OrderBy);
-                _ = query.OrderBy(spec.OrderBy);
+                query = query.OrderBy(spec.OrderBy);
             }
 
             if (spec.OrderByDescending is not null)
             {
-                _ = query.OrderByDescending(spec.OrderByDescending);
+                query = query.OrderByDescending(spec.OrderByDescending);
             }
 
-            _ = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+            query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
 
             return query;
 

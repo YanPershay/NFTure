@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\NFTure.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\NFTure.Web.bundle.scp.css"
-    },
-    {
       "Id": "C:\\YanPershay\\TestProjects\\NFTure\\NFTure\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

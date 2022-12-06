@@ -59,8 +59,6 @@ C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.AssemblyInf
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.AssemblyInfo.cs
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.csproj.CoreCompileInputs.cache
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.RazorAssemblyInfo.cache
-C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.RazorAssemblyInfo.cs
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets\msbuild.NFTure.Web.Microsoft.AspNetCore.StaticWebAssets.props
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets\msbuild.build.NFTure.Web.props
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.NFTure.Web.props
@@ -68,9 +66,7 @@ C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets\msbuil
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets.pack.json
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets.build.json
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\staticwebassets.development.json
-C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\scopedcss\bundle\NFTure.Web.styles.css
-C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\scopedcss\projectbundle\NFTure.Web.bundle.scp.css
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.csproj.CopyComplete
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\NFTure.Web.dll
 C:\YanPershay\TestProjects\NFTure\NFTure\obj\Debug\net7.0\refint\NFTure.Web.dll
