@@ -46,6 +46,16 @@ namespace NFTure.Application.Services
             return newMappedEntity;
         }
 
+        public async Task UpdateNftAsync(NftModel newNft)
+        {
+            var oldNft = await _nftRepository.GetByIdAsync(n => n.Id.Equals(newNft.Id));
+
+            if (oldNft is null)
+            {
+                throw new ApplicationException()
+            }
+        }
+
         // TODO: add validation method
     }
 }

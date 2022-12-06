@@ -26,11 +26,27 @@ namespace NFTure.Infrastructure.Repositories.Base
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
+        public virtual async Task<T> GetByIdAsync(int id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
+
+        public async Task<T> GetByIdAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).FirstOrDefaultAsync();
+        }
+
         public async Task<T> AddAsync(T entity)
         {
             _context.Set<T>().Add(entity);
             await _context.SaveChangesAsync();
             return entity;
+        }
+
+        public async Task UpdateAsync(T newEntity)
+        {
+            _context.Entry(newEntity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
 
         private IQueryable<T> ApplySpecification(ISpecification<T> specification) => 
