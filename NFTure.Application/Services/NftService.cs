@@ -26,8 +26,7 @@ namespace NFTure.Application.Services
 
         public async Task<NftModel> AddNewNftAsync(NftModel nftModel)
         {
-            // TODO: add validation
-
+            // Possible more serious check for NFT unique
             nftModel.Id = Guid.NewGuid();
             nftModel.CreatedDateUtc = DateTimeOffset.UtcNow;
 
@@ -49,7 +48,9 @@ namespace NFTure.Application.Services
 
         public async Task UpdateNftAsync(NftModel newNft)
         {
-            var editNft = await _nftRepository.GetByIdAsync(n => n.Id.Equals(newNft.Id));
+            await ValidateNftIfNotExists(newNft.Id);
+
+            var editNft = await _nftRepository.GetByIdAsync(newNft.Id);
 
             if (editNft is null)
             {
@@ -59,7 +60,7 @@ namespace NFTure.Application.Services
             editNft.Price = newNft.Price;
             editNft.Description = newNft.Description;
             editNft.ImageUrl = newNft.ImageUrl;
-            editNft.OwnerId= newNft.OwnerId;
+            editNft.OwnerId = newNft.OwnerId;
             editNft.LastUpdatedDateUtc = DateTimeOffset.UtcNow;
 
             await _nftRepository.UpdateAsync(editNft);
@@ -73,6 +74,22 @@ namespace NFTure.Application.Services
             return await _nftRepository.CountAsync(spec);
         }
 
-        // TODO: add validation method
+        private async Task ValidateNftIfExists(Guid nftId)
+        {
+            var existingEntity = await _nftRepository.GetByIdAsync(nftId);
+            if (existingEntity is not null)
+            {
+                throw new ApplicationException($"NFT entity with this id already exists");
+            }
+        }
+
+        private async Task ValidateNftIfNotExists(Guid nftId)
+        {
+            var existingEntity = await _nftRepository.GetByIdAsync(nftId);
+            if (existingEntity is null)
+            {
+                throw new ApplicationException($"NFT entity with this id is not exists");
+            }
+        }
     }
 }

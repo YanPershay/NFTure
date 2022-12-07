@@ -1,4 +1,5 @@
-﻿using NFTure.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using NFTure.Core.Entities;
 using NFTure.Core.Interfaces.Repositories;
 using NFTure.Core.Specifications.NFT;
 using NFTure.Infrastructure.Data;
@@ -18,6 +19,6 @@ namespace NFTure.Infrastructure.Repositories
             return await GetAsync(spec);
         }
 
-        //private async Task<Nft> GetNftByIdAsync(Guid id) => await GetByIdAsync(n => n.Id.Equals(id));
+        public async Task<Nft> GetByIdAsync(Guid id) => await GetByIdAsync(n => n.Id.Equals(id));
     }
 }

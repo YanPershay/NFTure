@@ -27,7 +27,8 @@ namespace NFTure.Web.Controllers
         /// </remarks>
         /// <param name="id">id</param>
         /// <response code="200">List of NFTs</response>
-        [HttpGet("id")]
+        /// <response code="400">Incorrect user ID</response>
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<NftResponse>>> GetNftByOwnerId(Guid id)
         {
             var nfts = await _nftService.GetNftsByOwnerIdAsync(id);
@@ -77,6 +78,7 @@ namespace NFTure.Web.Controllers
         /// </remarks>
         /// <param name="id">id</param>
         /// <response code="200">Count of user's NFTs</response>
+        /// <response code="400">Incorrect user ID</response>
         [HttpGet("count/{id}")]
         public async Task<ActionResult<IEnumerable<NftResponse>>> GetUserNftCount(Guid id)
         {
