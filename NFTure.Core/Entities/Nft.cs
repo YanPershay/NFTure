@@ -11,6 +11,7 @@ namespace NFTure.Core.Entities
         public double Price { get; set; }
         public Guid OwnerId { get; set; }
         public DateTimeOffset? CreatedDateUtc { get; set; }
+        public DateTimeOffset? LastUpdatedDateUtc { get; set; }
 
         // public virtual User User { get; set; }
 

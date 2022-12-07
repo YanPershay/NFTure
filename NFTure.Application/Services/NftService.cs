@@ -48,12 +48,21 @@ namespace NFTure.Application.Services
 
         public async Task UpdateNftAsync(NftModel newNft)
         {
-            var oldNft = await _nftRepository.GetByIdAsync(n => n.Id.Equals(newNft.Id));
+            var editNft = await _nftRepository.GetByIdAsync(n => n.Id.Equals(newNft.Id));
 
-            if (oldNft is null)
+            if (editNft is null)
             {
-                throw new ApplicationException()
+                throw new ApplicationException("Not existing entity.");
             }
+
+            editNft.Price = newNft.Price;
+            editNft.Description = newNft.Description;
+            editNft.ImageUrl = newNft.ImageUrl;
+            editNft.OwnerId= newNft.OwnerId;
+            editNft.LastUpdatedDateUtc = DateTimeOffset.UtcNow;
+
+            await _nftRepository.UpdateAsync(editNft);
+            // logger
         }
 
         // TODO: add validation method

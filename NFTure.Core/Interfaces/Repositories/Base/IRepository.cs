@@ -12,5 +12,6 @@ namespace NFTure.Core.Interfaces.Repositories.Base
         Task<T> GetByIdAsync(int id);
         Task<T> GetByIdAsync(Expression<Func<T, bool>> predicate);
         Task<T> AddAsync(T entity);
+        Task UpdateAsync(T newEntity);
     }
 }

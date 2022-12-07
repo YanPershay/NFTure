@@ -10,6 +10,7 @@ namespace NFTure.Web.Mapper
         {
             CreateMap<NftModel, NftResponse>().ReverseMap();
             CreateMap<CreateNftRequest, NftModel>().ReverseMap();
+            CreateMap<UpdateNftRequest, NftModel>().ReverseMap();
         }
     }
 }

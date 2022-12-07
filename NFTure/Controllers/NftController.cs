@@ -53,5 +53,20 @@ namespace NFTure.Web.Controllers
 
             return Ok(mappedResponse);
         }
+
+        /// <summary>
+        /// Update NFT data
+        /// </summary>
+        /// <response code="204">NFT successfully updated</response>
+        /// <response code="400">Validation error</response>
+        [HttpPut]
+        public async Task<ActionResult> UpdateNft(UpdateNftRequest nft)
+        {
+            var mappedModel = _mapper.Map<NftModel>(nft);
+
+            await _nftService.UpdateNftAsync(mappedModel);
+
+            return NoContent();
+        }
     }
 }
