@@ -49,6 +49,11 @@ namespace NFTure.Infrastructure.Repositories.Base
             await _context.SaveChangesAsync();
         }
 
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
+
         private IQueryable<T> ApplySpecification(ISpecification<T> specification) => 
             SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), specification);
     }

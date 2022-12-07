@@ -7,5 +7,6 @@ namespace NFTure.Application
         Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId);
         Task<NftModel> AddNewNftAsync(NftModel nftModel);
         Task UpdateNftAsync(NftModel newNft);
+        Task<int> GetUserNftCountAsync(Guid userId);
     }
 }

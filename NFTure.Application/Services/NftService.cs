@@ -2,6 +2,7 @@
 using NFTure.Application.Models;
 using NFTure.Core.Entities;
 using NFTure.Core.Interfaces.Repositories;
+using NFTure.Core.Specifications.NFT;
 
 namespace NFTure.Application.Services
 {
@@ -63,6 +64,13 @@ namespace NFTure.Application.Services
 
             await _nftRepository.UpdateAsync(editNft);
             // logger
+        }
+
+        public async Task<int> GetUserNftCountAsync(Guid userId)
+        {
+            var spec = new NftByOwnerIdSpecification(userId);
+
+            return await _nftRepository.CountAsync(spec);
         }
 
         // TODO: add validation method

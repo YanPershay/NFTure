@@ -68,5 +68,21 @@ namespace NFTure.Web.Controllers
 
             return NoContent();
         }
+
+        /// <summary>
+        /// Returns the number of user's NFTs
+        /// </summary>
+        /// <remarks>
+        /// User ID must be Guid
+        /// </remarks>
+        /// <param name="id">id</param>
+        /// <response code="200">Count of user's NFTs</response>
+        [HttpGet("count/{id}")]
+        public async Task<ActionResult<IEnumerable<NftResponse>>> GetUserNftCount(Guid id)
+        {
+            int count = await _nftService.GetUserNftCountAsync(id);
+
+            return Ok(count);
+        }
     }
 }
