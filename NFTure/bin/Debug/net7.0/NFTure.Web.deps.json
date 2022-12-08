@@ -19,6 +19,7 @@
           "NFTure.Application": "1.0.0",
           "NFTure.Core": "1.0.0",
           "NFTure.Infrastructure": "1.0.0",
+          "NLog.Web.AspNetCore": "5.2.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -448,6 +449,38 @@
           }
         }
       },
+      "NLog/5.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.0.1480"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "NLog": "5.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.0.285"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/5.2.0": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.2.0"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.0.694"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.4.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -715,7 +748,8 @@
         "dependencies": {
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
-          "NFTure.Core": "1.0.0"
+          "NFTure.Core": "1.0.0",
+          "NLog.Web.AspNetCore": "5.2.0"
         },
         "runtime": {
           "NFTure.Application.dll": {}
@@ -723,7 +757,8 @@
       },
       "NFTure.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.0"
+          "Microsoft.EntityFrameworkCore": "7.0.0",
+          "NLog.Web.AspNetCore": "5.2.0"
         },
         "runtime": {
           "NFTure.Core.dll": {}
@@ -733,7 +768,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
-          "NFTure.Core": "1.0.0"
+          "NFTure.Core": "1.0.0",
+          "NLog.Web.AspNetCore": "5.2.0"
         },
         "runtime": {
           "NFTure.Infrastructure.dll": {}
@@ -1054,6 +1090,27 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "NLog/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oW7ekrkRG9okpDMUcEglunWj8Qf2RY8qkgl+/chJoavzg3dbT13y32t19R54FKkmq80fKzw4ZekZkCrRGanKgQ==",
+      "path": "nlog/5.1.0",
+      "hashPath": "nlog.5.1.0.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wzVFG5p8Nwbs1Ws29T8YJg+UbJfsh61h6U4xArnDSrtVvOoccwKtoFPZWwbym3ZTiTFmHIf7Ugu1j/WnT7z3vg==",
+      "path": "nlog.extensions.logging/5.2.0",
+      "hashPath": "nlog.extensions.logging.5.2.0.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DqFgdydAWW+pshPdzh0ydk2jJrrVaZmBNz5+p9K8N9q/4BOPJ94S2fD8t9erd7ZMhnigaqOq/HqZH4nGGOYTbA==",
+      "path": "nlog.web.aspnetcore/5.2.0",
+      "hashPath": "nlog.web.aspnetcore.5.2.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",
