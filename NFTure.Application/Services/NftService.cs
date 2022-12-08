@@ -64,7 +64,7 @@ namespace NFTure.Application.Services
             editNft.LastUpdatedDateUtc = DateTimeOffset.UtcNow;
 
             await _nftRepository.UpdateAsync(editNft);
-            // logger
+            // TODO: log this
         }
 
         public async Task<int> GetUserNftCountAsync(Guid userId)

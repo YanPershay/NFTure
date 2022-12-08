@@ -1,7 +1,7 @@
 ﻿namespace NFTure.Core.Entities.Base
 {
-    internal interface IEntity<out TId>
+    internal interface IEntity<TId>
     {
-        TId Id { get; }
+        TId Id { get; set; }
     }
 }
