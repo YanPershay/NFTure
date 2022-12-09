@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
 using NFTure.Application;
 using NFTure.Application.Services;
+using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
 using NFTure.Core.Interfaces.Repositories.Base;
+using NFTure.Infrastructure.Logging;
 using NFTure.Infrastructure.Repositories;
 using NFTure.Infrastructure.Repositories.Base;
 using NFTure.Web.Utils;
@@ -19,6 +21,8 @@ namespace NFTure.Web.Extensions
             services.AddTransient<INftService, NftService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 
             services.AddControllers();
 

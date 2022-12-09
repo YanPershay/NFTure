@@ -1,6 +1,7 @@
 ﻿using NFTure.Application.Mapper;
 using NFTure.Application.Models;
 using NFTure.Core.Entities;
+using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
 using NFTure.Core.Specifications.NFT;
 
@@ -9,12 +10,12 @@ namespace NFTure.Application.Services
     public class NftService : INftService
     {
         private readonly INftRepository _nftRepository;
-        // TODO: create logging system
-        //private readonly IAppLogger _logger;
+        private readonly IAppLogger<NftService> _logger;
 
-        public NftService(INftRepository nftRepository)
+        public NftService(INftRepository nftRepository, IAppLogger<NftService> logger)
         {
             _nftRepository = nftRepository;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
@@ -39,7 +40,7 @@ namespace NFTure.Application.Services
             }
 
             var newEntity = await _nftRepository.AddAsync(mappedEntity);
-            // TODO: log this
+            _logger.LogInformation(this.GetType(), "NFT was successfully added.");
 
             var newMappedEntity = ObjectMapper.Mapper.Map<NftModel>(newEntity);
 
@@ -64,7 +65,8 @@ namespace NFTure.Application.Services
             editNft.LastUpdatedDateUtc = DateTimeOffset.UtcNow;
 
             await _nftRepository.UpdateAsync(editNft);
-            // TODO: log this
+
+            _logger.LogInformation(this.GetType(), $"NFT was successfully updated.");
         }
 
         public async Task<int> GetUserNftCountAsync(Guid userId)

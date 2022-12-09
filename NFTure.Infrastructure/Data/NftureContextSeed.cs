@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using NFTure.Core.Entities;
 
 namespace NFTure.Infrastructure.Data
 {
     public class NftureContextSeed
     {
-        public static async Task SeedAsync(NftureContext context, /*Logger,*/ int? retry = 0)
+        public static async Task SeedAsync(NftureContext context, ILoggerFactory loggerFactory, int? retry = 0)
         {
             int retryForAvailability = retry.Value;
 
@@ -25,8 +26,9 @@ namespace NFTure.Infrastructure.Data
                 if (retryForAvailability < 10)
                 {
                     retryForAvailability++;
-                    //TODO: log message exception
-                    await SeedAsync(context, retry);
+                    var log = loggerFactory.CreateLogger<NftureContextSeed>();
+                    log.LogError(ex.Message);
+                    await SeedAsync(context, loggerFactory, retry);
                 }
                 throw;
             }

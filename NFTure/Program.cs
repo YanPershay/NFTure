@@ -67,15 +67,16 @@ static void SeedDatabase(WebApplication app)
 {
     using var scope = app.Services.CreateScope();
     var services = scope.ServiceProvider;
-    // TODO: add logger factory
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
 
     try
     {
         var context = services.GetRequiredService<NftureContext>();
-        NftureContextSeed.SeedAsync(context).Wait();
+        NftureContextSeed.SeedAsync(context, loggerFactory).Wait();
     }
     catch (Exception ex)
     {
-        // TODO: create error log
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex.Message, "An error occured DB seeding.");
     }
 }
