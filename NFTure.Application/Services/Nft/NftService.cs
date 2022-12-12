@@ -40,7 +40,7 @@ namespace NFTure.Application.Services
             }
 
             var newEntity = await _nftRepository.AddAsync(mappedEntity);
-            _logger.LogInformation(this.GetType(), "NFT was successfully added.");
+            _logger.LogInformation(GetType(), "NFT was successfully added.");
 
             var newMappedEntity = ObjectMapper.Mapper.Map<NftModel>(newEntity);
 
@@ -66,7 +66,7 @@ namespace NFTure.Application.Services
 
             await _nftRepository.UpdateAsync(editNft);
 
-            _logger.LogInformation(this.GetType(), $"NFT was successfully updated.");
+            _logger.LogInformation(GetType(), $"NFT was successfully updated.");
         }
 
         public async Task<int> GetUserNftCountAsync(Guid userId)

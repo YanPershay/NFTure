@@ -1,6 +1,6 @@
 ﻿using NFTure.Application.Models;
 
-namespace NFTure.Application
+namespace NFTure.Application.Services
 {
     public interface INftService
     {

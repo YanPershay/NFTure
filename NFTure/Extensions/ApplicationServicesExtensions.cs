@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using NFTure.Application;
 using NFTure.Application.Services;
 using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
@@ -18,7 +17,10 @@ namespace NFTure.Web.Extensions
         {
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped<INftRepository, NftRepository>();
+            services.AddScoped<IClientActivityRepository, ClientActivityRepository>();
+
             services.AddTransient<INftService, NftService>();
+            services.AddTransient<IClientActivityService, ClientActivityService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

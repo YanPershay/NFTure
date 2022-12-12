@@ -8,5 +8,6 @@ namespace NFTure.Infrastructure.Data
         public NftureContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Nft> Nfts { get; set; }
+        public DbSet<ClientActivity> ClientActivities { get; set; }
     }
 }

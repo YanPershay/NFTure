@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using NFTure.Application;
 using NFTure.Application.Models;
+using NFTure.Application.Services;
 using NFTure.Web.Controllers.Base;
 using NFTure.Web.DTOs.NFT;
 
