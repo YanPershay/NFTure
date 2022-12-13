@@ -1,5 +1,6 @@
 ﻿using NFTure.Application.Mapper;
 using NFTure.Application.Models;
+using NFTure.Core;
 using NFTure.Core.Entities;
 using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
@@ -11,11 +12,15 @@ namespace NFTure.Application.Services
     {
         private readonly INftRepository _nftRepository;
         private readonly IAppLogger<NftService> _logger;
+        private readonly IClientActivityService _clientActivityService;
 
-        public NftService(INftRepository nftRepository, IAppLogger<NftService> logger)
+        public NftService(INftRepository nftRepository,
+            IAppLogger<NftService> logger,
+            IClientActivityService clientActivityService)
         {
             _nftRepository = nftRepository;
             _logger = logger;
+            _clientActivityService = clientActivityService;
         }
 
         public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
@@ -31,18 +36,24 @@ namespace NFTure.Application.Services
             nftModel.Id = Guid.NewGuid();
             nftModel.CreatedDateUtc = DateTimeOffset.UtcNow;
 
-            var mappedEntity = ObjectMapper.Mapper.Map<Nft>(nftModel);
+            var mappedNftEntity = ObjectMapper.Mapper.Map<Nft>(nftModel);
 
-            if (mappedEntity is null)
+            if (mappedNftEntity is null)
             {
                 // TODO: create custom exception
                 throw new ApplicationException("Entity couldn't be mapped.");
             }
 
-            var newEntity = await _nftRepository.AddAsync(mappedEntity);
+            var newNft = await _nftRepository.AddAsync(mappedNftEntity);
             _logger.LogInformation(GetType(), "NFT was successfully added.");
 
-            var newMappedEntity = ObjectMapper.Mapper.Map<NftModel>(newEntity);
+            await _clientActivityService.CreateClientActivityAsync(
+                ClientActivityAction.AddedNewNft,
+                ClientActivityType.Added,
+                newNft.OwnerId,
+                typeof(Nft));
+
+            var newMappedEntity = ObjectMapper.Mapper.Map<NftModel>(newNft);
 
             return newMappedEntity;
         }

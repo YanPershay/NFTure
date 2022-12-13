@@ -5,6 +5,6 @@ namespace NFTure.Core.Interfaces.Repositories
 {
     public interface IClientActivityRepository : IRepository<ClientActivity, int>
     {
-        Task<IReadOnlyList<ClientActivity>> GetActivitiesByUserIdAsync(Guid id);
+        Task<IReadOnlyList<ClientActivity>> GetByUserIdAsync(Guid id);
     }
 }

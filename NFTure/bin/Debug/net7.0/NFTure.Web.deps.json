@@ -768,6 +768,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
+          "NFTure.Application": "1.0.0",
           "NFTure.Core": "1.0.0",
           "NLog.Web.AspNetCore": "5.2.0"
         },

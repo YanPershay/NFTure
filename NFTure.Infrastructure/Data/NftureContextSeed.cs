@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NFTure.Application;
+using NFTure.Core;
 using NFTure.Core.Entities;
 
 namespace NFTure.Infrastructure.Data
@@ -24,7 +26,11 @@ namespace NFTure.Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                // TODO: Create tables from Enums with ClientActivityType & ClientActivityAction
+                if (!context.ClientActivities.Any())
+                {
+                    context.ClientActivities.AddRange(GetPreconfiguredClientActivities());
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {
@@ -65,18 +71,16 @@ namespace NFTure.Infrastructure.Data
         {
             new ClientActivity
             {
-                Id = 1,
-                //Action = "", //ClientActivityAction.NftAdded
-                //Type = "", //ClientActivityType.Created,
+                Action = ClientActivityAction.AddedNewNft.GetDescription(),
+                ActivityType = ClientActivityType.Added,
                 UserId = clientId1,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name
             },
             new ClientActivity
             {
-                Id = 2,
-                //Action = "", //ClientActivityAction.NftUpdated
-                //Type = "", //ClientActivityType.Updated,
+                Action = ClientActivityAction.NftUpdated.GetDescription(),
+                ActivityType = ClientActivityType.Updated,
                 UserId = clientId2,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name

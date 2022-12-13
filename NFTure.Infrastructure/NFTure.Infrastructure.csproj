@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NFTure.Application\NFTure.Application.csproj" />
     <ProjectReference Include="..\NFTure.Core\NFTure.Core.csproj" />
   </ItemGroup>
 

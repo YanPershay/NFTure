@@ -9,9 +9,6 @@ namespace NFTure.Core.Entities
         public string Action { get; set; }
 
         [Required]
-        public string Type { get; set; }
-
-        [Required]
         public Guid UserId { get; set; }
 
         [Required]
@@ -19,5 +16,8 @@ namespace NFTure.Core.Entities
 
         [Required]
         public string EntityType { get; set; }
+
+        // TODO: resolve foreign key
+        public ClientActivityType ActivityType { get; set; }
     }
 }

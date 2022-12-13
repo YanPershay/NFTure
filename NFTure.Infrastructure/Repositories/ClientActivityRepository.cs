@@ -9,7 +9,7 @@ namespace NFTure.Infrastructure.Repositories
     {
         public ClientActivityRepository(NftureContext context) : base(context) { }
 
-        public async Task<IReadOnlyList<ClientActivity>> GetActivitiesByUserIdAsync(Guid id) =>
+        public async Task<IReadOnlyList<ClientActivity>> GetByUserIdAsync(Guid id) =>
             await GetAsync(a => a.UserId.Equals(id));
     }
 }

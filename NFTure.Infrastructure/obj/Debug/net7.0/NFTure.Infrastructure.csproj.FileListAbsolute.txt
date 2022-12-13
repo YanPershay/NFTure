@@ -15,3 +15,5 @@ C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\refint\
 C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.pdb
 C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\NFTure.Infrastructure.genruntimeconfig.cache
 C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\obj\Debug\net7.0\ref\NFTure.Infrastructure.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Application.dll
+C:\YanPershay\TestProjects\NFTure\NFTure.Infrastructure\bin\Debug\net7.0\NFTure.Application.pdb
