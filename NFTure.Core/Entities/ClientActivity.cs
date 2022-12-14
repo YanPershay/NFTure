@@ -18,6 +18,6 @@ namespace NFTure.Core.Entities
         public string EntityType { get; set; }
 
         // TODO: resolve foreign key
-        public ClientActivityType ActivityType { get; set; }
+        public ClientActivityType ActivityTypeId { get; set; }
     }
 }

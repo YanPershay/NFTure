@@ -25,7 +25,7 @@ namespace NFTure.Application.Services
             var activity = new ClientActivity
             {
                 Action = action.GetDescription(),
-                ActivityType = type,
+                ActivityTypeId = type,
                 UserId = userId,
                 EntityType = entityType.Name,
                 CreatedDateUtc = DateTime.UtcNow,

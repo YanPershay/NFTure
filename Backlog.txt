@@ -1,4 +1,4 @@
-swagger
+Frontend unit tests
 
 add necessary attributes to endpoints
 

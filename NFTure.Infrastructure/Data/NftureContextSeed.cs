@@ -72,7 +72,7 @@ namespace NFTure.Infrastructure.Data
             new ClientActivity
             {
                 Action = ClientActivityAction.AddedNewNft.GetDescription(),
-                ActivityType = ClientActivityType.Added,
+                ActivityTypeId = ClientActivityType.Added,
                 UserId = clientId1,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name
@@ -80,7 +80,7 @@ namespace NFTure.Infrastructure.Data
             new ClientActivity
             {
                 Action = ClientActivityAction.NftUpdated.GetDescription(),
-                ActivityType = ClientActivityType.Updated,
+                ActivityTypeId = ClientActivityType.Updated,
                 UserId = clientId2,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NFTure.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using NFTure.Infrastructure.Data;
 namespace NFTure.Infrastructure.Migrations
 {
     [DbContext(typeof(NftureContext))]
-    partial class NftureContextModelSnapshot : ModelSnapshot
+    [Migration("20221214091547_ClientActivities_RenameTypeIdField")]
+    partial class ClientActivitiesRenameTypeIdField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
