@@ -11,12 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Core", "NFTure.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Infrastructure", "NFTure.Infrastructure\NFTure.Infrastructure.csproj", "{EF97B0E0-0EBE-4AE6-9EDC-B23EAFD7A521}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Tests", "NFTure.Tests\NFTure.Tests.csproj", "{2ACE8F74-062B-4FD9-8CEA-9FF3B44C1BD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFTure.Application.Tests", "NFTure.Tests\NFTure.Application.Tests.csproj", "{2ACE8F74-062B-4FD9-8CEA-9FF3B44C1BD8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D02CD3E-3419-4D8D-B7F2-FFC01423B9F1}"
 	ProjectSection(SolutionItems) = preProject
 		Backlog.txt = Backlog.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E956CA56-4E0A-484B-9F05-6D7C90C14BEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2ACE8F74-062B-4FD9-8CEA-9FF3B44C1BD8} = {E956CA56-4E0A-484B-9F05-6D7C90C14BEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B1CE076-6E7E-4079-A651-8DC0351133D2}
