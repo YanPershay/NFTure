@@ -42,6 +42,12 @@ namespace NFTure.Infrastructure.Repositories.Base
             await _context.SaveChangesAsync();
             return entity;
         }
+        public async Task AddRangeAsync(List<T> entities)
+        {
+            _context.Set<T>().AddRange(entities);
+            await _context.SaveChangesAsync();
+        }
+
 
         public async Task UpdateAsync(T newEntity)
         {

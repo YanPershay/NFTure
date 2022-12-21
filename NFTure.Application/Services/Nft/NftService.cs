@@ -32,10 +32,16 @@ namespace NFTure.Application.Services
 
         public async Task<NftModel> AddNewNftAsync(NftModel nftModel)
         {
-            // Possible more serious check for NFT unique
+            if (nftModel is null)
+            {
+                throw new ArgumentNullException(nameof(nftModel), "New NFT can't be null.");
+            }
+
+            // More serious check for NFT unique
             nftModel.Id = Guid.NewGuid();
             nftModel.CreatedDateUtc = DateTimeOffset.UtcNow;
 
+            //TODO: add check for nullability for required fields
             var mappedNftEntity = ObjectMapper.Mapper.Map<Nft>(nftModel);
 
             if (mappedNftEntity is null)
