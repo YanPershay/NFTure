@@ -50,6 +50,8 @@ try
 
     app.MapControllers();
 
+    app.MapFallbackToFile("public/index.html");
+
     app.Run();
 }
 catch (Exception ex)
