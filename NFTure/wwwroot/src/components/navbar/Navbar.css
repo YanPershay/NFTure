@@ -14,6 +14,7 @@
   top: 20px;
   left: 50%;
   transform: translate(-50%);
+  text-decoration: none;
 }
 
 .logo {
@@ -35,34 +36,6 @@
   align-items: center;
   text-align: center;
   justify-content: end;
-}
-
-.nav-links-mobile {
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-    background-color: aliceblue;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: black;
-    font-weight: 500;
-}
-
-.nav-links {
-  color: white;
-  text-decoration: none;
-  padding: 0.7rem 1rem;
-  white-space: nowrap;
-}
-
-.nav-links i {
-  padding-right: 10px;
-}
-
-.nav-links:hover {
-  background-color: rgba(75, 6, 105, 0.623);
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
 }
 
 .menu-icons {
@@ -114,7 +87,7 @@
     display: block;
   }
 
-  .nav-links-mobile {
+  .nav-links-signup {
     text-align: center;
     font-size: 1.3rem;
 }
