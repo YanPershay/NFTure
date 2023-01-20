@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { BrowserRouter } from "react-router-dom";
 import { MenuData } from "./MenuData.js";
 import MenuItem from "./menu-item/MenuItem";
 

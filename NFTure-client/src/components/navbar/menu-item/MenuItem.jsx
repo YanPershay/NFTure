@@ -1,12 +1,13 @@
 import "./MenuItem.css";
+import { Link } from "react-router-dom";
 
 const MenuItem = (props) => {
   return (
     <div>
-      <a href={props.item.url} className={props.item.className}>
+      <Link to={props.item.url} className={props.item.className}>
         <i className={props.item.icon}></i>
         {props.item.title}
-      </a>
+      </Link>
     </div>
   );
 };
