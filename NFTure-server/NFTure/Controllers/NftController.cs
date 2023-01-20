@@ -25,13 +25,13 @@ namespace NFTure.Web.Controllers
         /// <remarks>
         /// User ID must be Guid
         /// </remarks>
-        /// <param name="id">id</param>
+        /// <param name="ownerId">ownerId</param>
         /// <response code="200">List of NFTs</response>
         /// <response code="400">Incorrect user ID</response>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NftResponse>>> GetNftByOwnerId(Guid id)
+        public async Task<ActionResult<IEnumerable<NftResponse>>> GetNftByOwnerId(Guid ownerId)
         {
-            var nfts = await _nftService.GetNftsByOwnerIdAsync(id);
+            var nfts = await _nftService.GetNftsByOwnerIdAsync(ownerId);
 
             var mapped = _mapper.Map<IEnumerable<NftResponse>>(nfts);
 
