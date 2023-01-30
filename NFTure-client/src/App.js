@@ -8,7 +8,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <AppRouter />
+        <section className="page-content">
+          <AppRouter />
+        </section>
       </BrowserRouter>
     </div>
   );
