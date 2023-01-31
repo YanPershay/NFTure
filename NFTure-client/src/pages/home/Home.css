@@ -1,19 +1,33 @@
+.homePage {
+  width: 90%;
+  padding-left: 80px;
+  padding-right: 100px;
+}
+
 .text {
   color: white;
   font-size: 4rem;
-  width: 50%;
+  width: 65%;
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
 .awesomeText {
-    padding: 10px;
-    border-radius: 10px;
-    background: -webkit-linear-gradient(rgba(231, 13, 184, 0.3), rgba(125, 17, 227, 0.3));
+  padding: 10px;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(
+    rgba(231, 13, 184, 0.3),
+    rgba(125, 17, 227, 0.3)
+  );
 }
 
 .buttons {
   margin-top: 30px;
   float: left;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
 }
