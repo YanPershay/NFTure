@@ -1,7 +1,7 @@
-import HomePage from "./pages/Home.jsx";
-import GalleryPage from "./pages/Gallery.jsx";
-import AboutPage from "./pages/About.jsx";
-import ContactsPage from "./pages/Contacts.jsx";
+import HomePage from "./pages/home/Home.jsx";
+import GalleryPage from "./pages/gallery/Gallery.jsx";
+import AboutPage from "./pages/about/About.jsx";
+import ContactsPage from "./pages/contacts/Contacts.jsx";
 
 // TODO: divide into public and private routes after adding auth functionality
 export const routes = [

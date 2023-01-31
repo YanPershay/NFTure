@@ -1,0 +1,15 @@
+.gradientButton {
+  
+  box-shadow: 0 0 20px rgb(207, 63, 236);
+  background-image: linear-gradient(
+    to right,
+    #f83ec3 0%,
+    #ae14eb 51%,
+    #f83ec3 100%
+  );
+  border: 0;
+}
+
+.gradientButton:hover {
+  background-position: right center;
+}
