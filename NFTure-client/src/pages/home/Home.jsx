@@ -6,7 +6,7 @@ import "./Home.css";
 const HomePage = () => {
   return (
     <div className="homePage">
-      <div class="welcome">
+      <div className="welcome">
         <div className="welcomeText">
           <div className="text">
             Collect & Sell Your <span className="awesomeText">Awesome</span>{" "}
