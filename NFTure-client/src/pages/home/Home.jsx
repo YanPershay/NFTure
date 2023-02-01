@@ -21,6 +21,7 @@ const HomePage = () => {
           <Card />
         </div>
       </div>
+      <hr class="solid divider"></hr>
     </div>
   );
 };

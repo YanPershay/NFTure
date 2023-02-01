@@ -31,3 +31,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
