@@ -55,6 +55,7 @@ namespace NFTure.Infrastructure.Data
                 Description = "1st base NFT data",
                 OwnerId = clientId1,
                 CreatedDateUtc = DateTime.UtcNow,
+                Price = 300
             },
             new Nft
             {
@@ -63,6 +64,7 @@ namespace NFTure.Infrastructure.Data
                 Description = "2nd base NFT data",
                 OwnerId = clientId2,
                 CreatedDateUtc = DateTime.UtcNow,
+                Price = 400
             }
         };
 

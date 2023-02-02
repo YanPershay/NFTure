@@ -18,7 +18,5 @@ namespace NFTure.Infrastructure.Repositories
             var spec = new NftByOwnerIdSpecification(userId);
             return await GetAsync(spec);
         }
-
-        public async Task<Nft> GetByIdAsync(Guid id) => await GetByIdAsync(n => n.Id.Equals(id));
     }
 }

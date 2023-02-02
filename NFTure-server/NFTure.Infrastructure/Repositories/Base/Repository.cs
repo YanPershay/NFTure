@@ -26,9 +26,9 @@ namespace NFTure.Infrastructure.Repositories.Base
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(U id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            return await _context.Set<T>().FirstOrDefaultAsync(i => i.Id.Equals(id));
         }
 
         public async Task<T> GetByIdAsync(Expression<Func<T, bool>> predicate)
