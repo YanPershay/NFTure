@@ -26,9 +26,9 @@ namespace NFTure.Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.ClientActivities.Any())
+                if (!context.UserActivities.Any())
                 {
-                    context.ClientActivities.AddRange(GetPreconfiguredClientActivities());
+                    context.UserActivities.AddRange(GetPreconfiguredUserActivities());
                     await context.SaveChangesAsync();
                 }
             }
@@ -68,21 +68,21 @@ namespace NFTure.Infrastructure.Data
             }
         };
 
-        private static IEnumerable<ClientActivity> GetPreconfiguredClientActivities() =>
-        new List<ClientActivity>
+        private static IEnumerable<UserActivity> GetPreconfiguredUserActivities() =>
+        new List<UserActivity>
         {
-            new ClientActivity
+            new UserActivity
             {
-                Action = ClientActivityAction.AddedNewNft.GetDescription(),
-                ActivityTypeId = ClientActivityType.Added,
+                Action = UserActivityAction.AddedNewNft.GetDescription(),
+                ActivityTypeId = UserActivityType.Added,
                 UserId = clientId1,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name
             },
-            new ClientActivity
+            new UserActivity
             {
-                Action = ClientActivityAction.NftUpdated.GetDescription(),
-                ActivityTypeId = ClientActivityType.Updated,
+                Action = UserActivityAction.NftUpdated.GetDescription(),
+                ActivityTypeId = UserActivityType.Updated,
                 UserId = clientId2,
                 CreatedDateUtc = DateTimeOffset.UtcNow,
                 EntityType = typeof(Nft).Name

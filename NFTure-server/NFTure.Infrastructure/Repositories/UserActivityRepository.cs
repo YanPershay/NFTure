@@ -5,11 +5,11 @@ using NFTure.Infrastructure.Repositories.Base;
 
 namespace NFTure.Infrastructure.Repositories
 {
-    public class ClientActivityRepository : Repository<ClientActivity, int>, IClientActivityRepository
+    public class UserActivityRepository : Repository<UserActivity, int>, IUserActivityRepository
     {
-        public ClientActivityRepository(NftureContext context) : base(context) { }
+        public UserActivityRepository(NftureContext context) : base(context) { }
 
-        public async Task<IReadOnlyList<ClientActivity>> GetByUserIdAsync(Guid id) =>
+        public async Task<IReadOnlyList<UserActivity>> GetByUserIdAsync(Guid id) =>
             await GetAsync(a => a.UserId.Equals(id));
     }
 }

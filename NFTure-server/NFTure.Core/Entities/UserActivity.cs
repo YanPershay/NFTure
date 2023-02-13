@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NFTure.Core.Entities
 {
-    public class ClientActivity : Entity<int>
+    public class UserActivity : Entity<int>
     {
         [Required]
         public string Action { get; set; }
@@ -18,6 +18,6 @@ namespace NFTure.Core.Entities
         public string EntityType { get; set; }
 
         // TODO: resolve foreign key
-        public ClientActivityType ActivityTypeId { get; set; }
+        public UserActivityType ActivityTypeId { get; set; }
     }
 }

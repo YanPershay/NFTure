@@ -1,6 +1,6 @@
 ﻿namespace NFTure.Core
 {
-    public enum ClientActivityType
+    public enum UserActivityType
     {
         Added,
         Updated,

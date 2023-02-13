@@ -11,18 +11,18 @@ namespace NFTure.Application.Tests.Services
     {
         private readonly Mock<INftRepository> _mockNftRepository;
         private readonly Mock<IAppLogger<NftService>> _mockAppLogger;
-        private readonly Mock<IClientActivityService> _mockClientActivityService;
+        private readonly Mock<IUserActivityService> _mockUserActivityService;
         private readonly NftService _nftService;
 
         public NftServiceTests()
         {
             _mockNftRepository = new Mock<INftRepository>();
             _mockAppLogger = new Mock<IAppLogger<NftService>>();
-            _mockClientActivityService = new Mock<IClientActivityService>();
+            _mockUserActivityService = new Mock<IUserActivityService>();
             _nftService = new NftService(
                 _mockNftRepository.Object,
                 _mockAppLogger.Object,
-                _mockClientActivityService.Object);
+                _mockUserActivityService.Object);
         }
 
         // TODO: check activities creation

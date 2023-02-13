@@ -2,7 +2,7 @@
 
 namespace NFTure.Core
 {
-    public enum ClientActivityAction
+    public enum UserActivityAction
     {
         [Description("Added new NFT")]
         AddedNewNft,

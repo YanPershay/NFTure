@@ -17,10 +17,10 @@ namespace NFTure.Web.Extensions
         {
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped<INftRepository, NftRepository>();
-            services.AddScoped<IClientActivityRepository, ClientActivityRepository>();
+            services.AddScoped<IUserActivityRepository, UserActivityRepository>();
 
             services.AddTransient<INftService, NftService>();
-            services.AddTransient<IClientActivityService, ClientActivityService>();
+            services.AddTransient<IUserActivityService, UserActivityService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

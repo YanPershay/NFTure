@@ -4,25 +4,25 @@ using NFTure.Core.Interfaces.Repositories;
 
 namespace NFTure.Application.Services
 {
-    public class ClientActivityService : IClientActivityService
+    public class UserActivityService : IUserActivityService
     {
-        private readonly IClientActivityRepository _repository;
+        private readonly IUserActivityRepository _repository;
 
-        public ClientActivityService(IClientActivityRepository repository)
+        public UserActivityService(IUserActivityRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<IEnumerable<ClientActivity>> GetUserClientActivitiesAsync(Guid userId) =>
+        public async Task<IEnumerable<UserActivity>> GetUserActivitiesAsync(Guid userId) =>
             await _repository.GetByUserIdAsync(userId);
 
-        public async Task CreateClientActivityAsync(
-            ClientActivityAction action,
-            ClientActivityType type,
+        public async Task CreateUserActivityAsync(
+            UserActivityAction action,
+            UserActivityType type,
             Guid userId,
             Type entityType)
         {
-            var activity = new ClientActivity
+            var activity = new UserActivity
             {
                 Action = action.GetDescription(),
                 ActivityTypeId = type,

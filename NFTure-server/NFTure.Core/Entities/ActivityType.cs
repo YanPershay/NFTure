@@ -2,9 +2,9 @@
 
 namespace NFTure.Core.Entities
 {
-    public class ActivityType : IEnumModel<ActivityType, ClientActivityType>
+    public class ActivityType : IEnumModel<ActivityType, UserActivityType>
     {
-        public ClientActivityType Id { get; set; }
+        public UserActivityType Id { get; set; }
         public string Name { get; set; }
     }
 }

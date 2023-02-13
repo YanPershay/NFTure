@@ -12,15 +12,15 @@ namespace NFTure.Application.Services
     {
         private readonly INftRepository _nftRepository;
         private readonly IAppLogger<NftService> _logger;
-        private readonly IClientActivityService _clientActivityService;
+        private readonly IUserActivityService _userActivityService;
 
         public NftService(INftRepository nftRepository,
             IAppLogger<NftService> logger,
-            IClientActivityService clientActivityService)
+            IUserActivityService userActivityService)
         {
             _nftRepository = nftRepository;
             _logger = logger;
-            _clientActivityService = clientActivityService;
+            _userActivityService = userActivityService;
         }
 
         public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
@@ -53,9 +53,9 @@ namespace NFTure.Application.Services
             var newNft = await _nftRepository.AddAsync(mappedNftEntity);
             _logger.LogInformation(GetType(), "NFT was successfully added.");
 
-            await _clientActivityService.CreateClientActivityAsync(
-                ClientActivityAction.AddedNewNft,
-                ClientActivityType.Added,
+            await _userActivityService.CreateUserActivityAsync(
+                UserActivityAction.AddedNewNft,
+                UserActivityType.Added,
                 newNft.OwnerId,
                 typeof(Nft));
 
