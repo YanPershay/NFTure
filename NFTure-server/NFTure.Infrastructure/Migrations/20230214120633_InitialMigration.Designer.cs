@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NFTure.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using NFTure.Infrastructure.Data;
 namespace NFTure.Infrastructure.Migrations
 {
     [DbContext(typeof(NftureContext))]
-    partial class NftureContextModelSnapshot : ModelSnapshot
+    [Migration("20230214120633_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

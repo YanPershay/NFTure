@@ -13,7 +13,12 @@ try
 
     var services = builder.Services;
 
-    services.AddDbContext<NftureContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    services.AddDbContext<NftureContext>(opts =>
+    {
+        opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        opts.EnableSensitiveDataLogging();
+    });
+
     services.AddApplicationServices();
 
     var app = builder.Build();

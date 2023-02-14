@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NFTure.Core;
 using NFTure.Core.Entities;
+using NFTure.Core.Entities.Base;
 
 namespace NFTure.Infrastructure.Data
 {
@@ -8,16 +9,61 @@ namespace NFTure.Infrastructure.Data
     {
         public NftureContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<Nft> Nfts { get; set; }
-        public DbSet<UserActivity> UserActivities { get; set; }
-        public DbSet<ActivityType> ActivityTypes { get; set; }
+        public virtual DbSet<Nft> Nfts { get; set; }
+        public virtual DbSet<UserActivity> UserActivities { get; set; }
+        public virtual DbSet<ActivityType> ActivityTypes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<UserInfo> UsersInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ActivityType>()
                 .HasData(SeedEnumExtension.GetValuesFromEnum<ActivityType, UserActivityType>());
 
-            // TODO: Add foreign key to ActivityType
+            modelBuilder.Entity<Nft>(e =>
+            {
+                e.HasKey(n => n.Id).HasName("PK_Nfts");
+
+                e.Property(e => e.Id).ValueGeneratedNever();
+
+                e.HasOne(n => n.Creator)
+                 .WithMany(u => u.CreatedNfts)
+                 .HasForeignKey(n => n.CreatorId)
+                 .OnDelete(DeleteBehavior.NoAction);
+
+                e.HasOne(n => n.Owner)
+                 .WithMany(u => u.OwnedNfts)
+                 .HasForeignKey(n => n.OwnerId)
+                 .OnDelete(DeleteBehavior.NoAction);
+            });
+
+            modelBuilder.Entity<User>(e =>
+            {
+                e.HasKey(u => u.Id)
+                 .HasName("PK_Users");
+
+                e.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+
+            modelBuilder.Entity<UserActivity>(e =>
+            {
+                e.HasKey(a => a.Id).HasName("PK_UserActivities");
+
+                e.HasOne(a => a.User)
+                 .WithMany(u => u.UserActivities)
+                 .HasForeignKey(a => a.UserId);
+            });
+
+            modelBuilder.Entity<UserInfo>(e =>
+            {
+                e.HasKey(i => i.Id).HasName("PK_UsersInfo");
+
+                e.HasOne(i => i.User)
+                 .WithOne(u => u.UserInfo)
+                 .HasForeignKey<UserInfo>(u => u.UserId);
+            });
         }
     }
 }
