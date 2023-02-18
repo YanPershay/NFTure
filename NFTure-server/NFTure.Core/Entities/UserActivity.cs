@@ -17,8 +17,7 @@ namespace NFTure.Core.Entities
         [Required]
         public string EntityType { get; set; }
 
-        // TODO: resolve foreign key
-        public UserActivityType ActivityTypeId { get; set; }
+        public string ActivityType { get; set; }
 
         public virtual User User { get; set; }
     }

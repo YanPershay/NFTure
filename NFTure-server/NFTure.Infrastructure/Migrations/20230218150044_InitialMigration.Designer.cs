@@ -12,7 +12,7 @@ using NFTure.Infrastructure.Data;
 namespace NFTure.Infrastructure.Migrations
 {
     [DbContext(typeof(NftureContext))]
-    [Migration("20230214120633_InitialMigration")]
+    [Migration("20230218150044_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -24,37 +24,6 @@ namespace NFTure.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("NFTure.Core.Entities.ActivityType", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ActivityTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 0,
-                            Name = "Added"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "Updated"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Deleted"
-                        });
-                });
 
             modelBuilder.Entity("NFTure.Core.Entities.Nft", b =>
                 {
@@ -136,8 +105,9 @@ namespace NFTure.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ActivityTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("ActivityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("CreatedDateUtc")
                         .HasColumnType("datetimeoffset");

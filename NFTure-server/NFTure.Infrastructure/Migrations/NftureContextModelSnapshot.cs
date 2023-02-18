@@ -22,37 +22,6 @@ namespace NFTure.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NFTure.Core.Entities.ActivityType", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ActivityTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 0,
-                            Name = "Added"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "Updated"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Deleted"
-                        });
-                });
-
             modelBuilder.Entity("NFTure.Core.Entities.Nft", b =>
                 {
                     b.Property<Guid>("Id")
@@ -133,8 +102,9 @@ namespace NFTure.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ActivityTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("ActivityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("CreatedDateUtc")
                         .HasColumnType("datetimeoffset");

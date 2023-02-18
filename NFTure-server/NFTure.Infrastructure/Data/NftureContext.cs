@@ -11,16 +11,12 @@ namespace NFTure.Infrastructure.Data
 
         public virtual DbSet<Nft> Nfts { get; set; }
         public virtual DbSet<UserActivity> UserActivities { get; set; }
-        public virtual DbSet<ActivityType> ActivityTypes { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         public virtual DbSet<UserInfo> UsersInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ActivityType>()
-                .HasData(SeedEnumExtension.GetValuesFromEnum<ActivityType, UserActivityType>());
-
             modelBuilder.Entity<Nft>(e =>
             {
                 e.HasKey(n => n.Id).HasName("PK_Nfts");
