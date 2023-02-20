@@ -290,8 +290,9 @@ namespace NFTure.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ActivityTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("ActivityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("CreatedDateUtc")
                         .HasColumnType("datetimeoffset");
