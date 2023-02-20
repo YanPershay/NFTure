@@ -1,4 +1,5 @@
-﻿using NFTure.Core.Entities.Base;
+﻿using NFTure.Core.Entities.Auth;
+using NFTure.Core.Entities.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace NFTure.Core.Entities

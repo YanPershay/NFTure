@@ -1,25 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using NFTure.Core;
 using NFTure.Core.Entities;
-using NFTure.Core.Entities.Base;
+using NFTure.Core.Entities.Auth;
 
 namespace NFTure.Infrastructure.Data
 {
-    public class NftureContext : DbContext
+    public class NftureContext : IdentityDbContext<User, Role, Guid>
     {
         public NftureContext(DbContextOptions options) : base(options) { }
 
         public virtual DbSet<Nft> Nfts { get; set; }
         public virtual DbSet<UserActivity> UserActivities { get; set; }
         public virtual DbSet<ActivityType> ActivityTypes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
 
         public virtual DbSet<UserInfo> UsersInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ActivityType>()
-                .HasData(SeedEnumExtension.GetValuesFromEnum<ActivityType, UserActivityType>());
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Nft>(e =>
             {

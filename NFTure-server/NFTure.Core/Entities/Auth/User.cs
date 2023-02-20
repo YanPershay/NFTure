@@ -1,22 +1,15 @@
-﻿using NFTure.Core.Entities.Base;
+﻿using Microsoft.AspNetCore.Identity;
+using NFTure.Core.Entities.Base;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace NFTure.Core.Entities
+namespace NFTure.Core.Entities.Auth
 {
-    public class User : Entity<Guid>
+    public class User : IdentityUser<Guid>
     {
         [Required]
         [MaxLength(30)]
-        public string Username { get; set; }
-
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-
-        [Required]
-        [PasswordPropertyText]
-        public string Password { get; set; }
+        public override string UserName { get; set; }
 
         public virtual List<Nft> CreatedNfts { get; }
 

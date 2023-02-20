@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using NFTure.Application;
 using NFTure.Core;
 using NFTure.Core.Entities;
+using NFTure.Core.Entities.Auth;
 
 namespace NFTure.Infrastructure.Data
 {
@@ -132,16 +133,14 @@ namespace NFTure.Infrastructure.Data
             new User
             {
                 Id = clientId1,
-                Username = "pat_bateman",
-                Email = "@p.bateman@gmail.com",
-                Password = "1234567"
+                UserName = "pat_bateman",
+                Email = "@p.bateman@gmail.com"
             },
             new User
             {
                 Id = clientId2,
-                Username = "derden",
-                Email = "@t.derden@gmail.com",
-                Password = "7654321"
+                UserName = "derden",
+                Email = "@t.derden@gmail.com"
             },
         };
     }
