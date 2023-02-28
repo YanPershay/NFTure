@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using NFTure.Infrastructure.Data;
 using NFTure.Web.Extensions;
+using NFTure.Web.Settings;
 using NLog;
 using NLog.Web;
 
@@ -10,7 +11,6 @@ var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentCla
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-
     var services = builder.Services;
 
     services.AddDbContext<NftureContext>(opts =>
@@ -19,7 +19,12 @@ try
         opts.EnableSensitiveDataLogging();
     });
 
+    services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
+
     services.AddApplicationServices();
+
+    var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
+    services.AddAuth(jwtSettings);
 
     var app = builder.Build();
 
@@ -51,7 +56,7 @@ try
     app.UseHttpsRedirection();
     app.UseStaticFiles();
 
-    app.UseAuthorization();
+    app.UseAuth();
 
     app.MapControllers();
 

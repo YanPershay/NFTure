@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using NFTure.Core.Entities.Auth;
 using NFTure.Web.Controllers.Base;
 using NFTure.Web.DTOs.User;
+using NFTure.Web.Settings;
+using NFTure.Web.Utils;
 
 namespace NFTure.Web.Controllers
 {
@@ -11,15 +15,18 @@ namespace NFTure.Web.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<Role> _roleManager;
+        private readonly JwtSettings _jwtSettings;
         private readonly IMapper _mapper;
 
         public AuthController(UserManager<User> userManager,
             IMapper mapper,
-            RoleManager<Role> roleManager)
+            RoleManager<Role> roleManager,
+            IOptionsSnapshot<JwtSettings> jwtSettings)
         {
             _userManager = userManager;
             _mapper = mapper;
             _roleManager = roleManager;
+            _jwtSettings = jwtSettings.Value;
         }
 
         [HttpPost("SignUp")]
@@ -53,7 +60,8 @@ namespace NFTure.Web.Controllers
 
             if (userSignInResult)
             {
-                return Ok();
+                var roles = await _userManager.GetRolesAsync(user);
+                return Ok(JwtService.GenerateJwt(_jwtSettings, user, roles));
             }
 
             return BadRequest("Email or password incorrect");

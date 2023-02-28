@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NFTure.Application.Models;
 using NFTure.Application.Services;
@@ -7,6 +8,8 @@ using NFTure.Web.DTOs.NFT;
 
 namespace NFTure.Web.Controllers
 {
+
+    //[Authorize(Roles = "User")]
     public class NftController : ApiController
     {
         private readonly INftService _nftService;
