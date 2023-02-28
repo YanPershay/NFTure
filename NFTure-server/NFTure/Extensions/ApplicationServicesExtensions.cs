@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using NFTure.Application.Services;
+using NFTure.Core.Entities.Auth;
 using NFTure.Core.Interfaces;
 using NFTure.Core.Interfaces.Repositories;
 using NFTure.Core.Interfaces.Repositories.Base;
+using NFTure.Infrastructure.Data;
 using NFTure.Infrastructure.Logging;
 using NFTure.Infrastructure.Repositories;
 using NFTure.Infrastructure.Repositories.Base;
@@ -15,6 +18,10 @@ namespace NFTure.Web.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddIdentity<User, Role>()
+                    .AddEntityFrameworkStores<NftureContext>()
+                    .AddDefaultTokenProviders();
+
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped<INftRepository, NftRepository>();
             services.AddScoped<IUserActivityRepository, UserActivityRepository>();

@@ -39,8 +39,6 @@ namespace NFTure.Infrastructure.Data
             {
                 e.HasKey(u => u.Id)
                  .HasName("PK_Users");
-
-                e.Property(e => e.Id).ValueGeneratedNever();
             });
 
 
