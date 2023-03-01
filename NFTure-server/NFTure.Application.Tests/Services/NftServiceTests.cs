@@ -1,5 +1,4 @@
 ﻿using Moq;
-using NFTure.Application.Models;
 using NFTure.Application.Services;
 using NFTure.Core.Entities;
 using NFTure.Core.Interfaces;
@@ -42,16 +41,16 @@ namespace NFTure.Application.Tests.Services
         }
 
         [Theory]
-        [MemberData(nameof(TestData.NewNftModels), MemberType = typeof(TestData))]
-        public async Task AddNewNftAsync_NftModel_ReturnsCreatedEntities(NftModel nftModel)
+        [MemberData(nameof(TestData.NewNft), MemberType = typeof(TestData))]
+        public async Task AddNewNftAsync_NftModel_ReturnsCreatedEntities(Nft nft)
         {
             // Arrange
             Nft newNft = new Nft
             {
-                ImageUrl = nftModel.ImageUrl,
-                Description = nftModel.Description,
-                Price = nftModel.Price,
-                OwnerId = nftModel.OwnerId,
+                ImageUrl = nft.ImageUrl,
+                Description = nft.Description,
+                Price = nft.Price,
+                OwnerId = nft.OwnerId,
                 CreatedDateUtc = DateTime.UtcNow,
             };
 
@@ -59,25 +58,25 @@ namespace NFTure.Application.Tests.Services
 
             // Act
 
-            var result = await _nftService.AddNewNftAsync(nftModel);
+            var result = await _nftService.AddNewNftAsync(nft);
 
             // Assert
             Assert.NotNull(result);
             Assert.NotNull(result.CreatedDateUtc);
-            Assert.Equal(nftModel.ImageUrl, result.ImageUrl);
-            Assert.Equal(nftModel.Price, result.Price);
-            Assert.Equal(nftModel.Description, result.Description);
-            Assert.Equal(nftModel.OwnerId, result.OwnerId);
+            Assert.Equal(nft.ImageUrl, result.ImageUrl);
+            Assert.Equal(nft.Price, result.Price);
+            Assert.Equal(nft.Description, result.Description);
+            Assert.Equal(nft.OwnerId, result.OwnerId);
         }
 
         [Fact]
-        public async Task AddNewNftAsync_NullNftModel_ThrowsException()
+        public async Task AddNewNftAsync_NullNft_ThrowsException()
         {
             // Arrange 
-            NftModel newNftModel = null;
+            Nft newNft = null;
 
             // Act
-            var ex = await Record.ExceptionAsync(async () => await _nftService.AddNewNftAsync(newNftModel));
+            var ex = await Record.ExceptionAsync(async () => await _nftService.AddNewNftAsync(newNft));
 
             // Assert
             Assert.NotNull(ex);
@@ -86,12 +85,12 @@ namespace NFTure.Application.Tests.Services
 
         private static class TestData
         {
-            public static IEnumerable<object[]> NewNftModels =>
+            public static IEnumerable<object[]> NewNft =>
               new List<object[]>
               {
                   new object[]
                   {
-                     new NftModel
+                     new Nft
                      {
                          ImageUrl = "https://pic.nft.com",
                          Description = "Description",
@@ -101,7 +100,7 @@ namespace NFTure.Application.Tests.Services
                   },
                   new object[]
                   {
-                     new NftModel
+                     new Nft
                      {
                          ImageUrl = "https://pic2.nft.com",
                          Description = "Description_2",

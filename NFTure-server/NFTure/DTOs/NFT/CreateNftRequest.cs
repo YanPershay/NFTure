@@ -7,6 +7,9 @@ namespace NFTure.Web.DTOs.NFT
         [Required]
         public string ImageUrl { get; set; }
 
+        [Required]
+        public string Name { get; set; }
+
         public string? Description { get; set; }
 
         [Required]
@@ -15,5 +18,8 @@ namespace NFTure.Web.DTOs.NFT
 
         [Required]
         public Guid OwnerId { get; set; }
+
+        [Required]
+        public Guid CreatorId { get; set; }
     }
 }

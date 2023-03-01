@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NFTure.Application.Models;
 using NFTure.Application.Services;
+using NFTure.Core.Entities;
 using NFTure.Web.Controllers.Base;
 using NFTure.Web.DTOs.NFT;
 
@@ -21,6 +20,19 @@ namespace NFTure.Web.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Test endpoint for getting any NFT entity
+        /// </summary>
+        [HttpGet("id")]
+        public async Task<ActionResult<NftResponse>> GetNftById(Guid id)
+        {
+            var nft = await _nftService.GetNftByIdAsync(id);
+
+            var mappedNft = _mapper.Map<NftResponse>(nft);
+
+            return Ok(mappedNft);
+        }
+
         //TODO: Add 401, 403 etc. codes to summary when auth will be added
         /// <summary>
         /// Returns all NFTs for user by user ID
@@ -32,13 +44,13 @@ namespace NFTure.Web.Controllers
         /// <response code="200">List of NFTs</response>
         /// <response code="400">Incorrect user ID</response>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NftResponse>>> GetNftByOwnerId(Guid ownerId)
+        public async Task<ActionResult<IEnumerable<NftResponse>>> GetNftsByOwnerId(Guid ownerId)
         {
             var nfts = await _nftService.GetNftsByOwnerIdAsync(ownerId);
 
-            var mapped = _mapper.Map<IEnumerable<NftResponse>>(nfts);
+            var mappedNfts = _mapper.Map<IEnumerable<NftResponse>>(nfts);
 
-            return Ok(mapped);
+            return Ok(mappedNfts);
         }
 
         /// <summary>
@@ -49,13 +61,13 @@ namespace NFTure.Web.Controllers
         [HttpPost]
         public async Task<ActionResult<NftResponse>> AddNewNft(CreateNftRequest nft)
         {
-            var mappedModel = _mapper.Map<NftModel>(nft);
+            var mappedModel = _mapper.Map<Nft>(nft);
 
             var createdNft = await _nftService.AddNewNftAsync(mappedModel);
             
-            var mappedResponse = _mapper.Map<NftResponse>(createdNft);
+            var mappedNft = _mapper.Map<NftResponse>(createdNft);
 
-            return Ok(mappedResponse);
+            return Ok(mappedNft);
         }
 
         /// <summary>
@@ -66,7 +78,7 @@ namespace NFTure.Web.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateNft(UpdateNftRequest nft)
         {
-            var mappedModel = _mapper.Map<NftModel>(nft);
+            var mappedModel = _mapper.Map<Nft>(nft);
 
             await _nftService.UpdateNftAsync(mappedModel);
 

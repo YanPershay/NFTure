@@ -1,12 +1,14 @@
-﻿using NFTure.Application.Models;
+﻿using NFTure.Core.Entities;
 
 namespace NFTure.Application.Services
 {
     public interface INftService
     {
-        Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId);
-        Task<NftModel> AddNewNftAsync(NftModel nftModel);
-        Task UpdateNftAsync(NftModel newNft);
+        // TEST method
+        Task<Nft> GetNftByIdAsync(Guid id);
+        Task<IEnumerable<Nft>> GetNftsByOwnerIdAsync(Guid ownerId);
+        Task<Nft> AddNewNftAsync(Nft nftModel);
+        Task UpdateNftAsync(Nft newNft);
         Task<int> GetUserNftCountAsync(Guid userId);
     }
 }

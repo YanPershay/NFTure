@@ -30,7 +30,7 @@ try
 
     var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
-    SeedDatabase(app);
+    // SeedDatabase(app);
 
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())

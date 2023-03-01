@@ -12,10 +12,16 @@ namespace NFTure.Web.DTOs.NFT
         public string? Description { get; set; }
 
         [Required]
+        public string Name { get; set; }
+
+        [Required]
         [Range(0, double.PositiveInfinity)]
         public double Price { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
+
+        [Required]
+        public Guid CreatorId { get; set; }
     }
 }

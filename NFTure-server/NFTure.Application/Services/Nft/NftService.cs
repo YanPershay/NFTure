@@ -1,5 +1,4 @@
 ﻿using NFTure.Application.Mapper;
-using NFTure.Application.Models;
 using NFTure.Core;
 using NFTure.Core.Entities;
 using NFTure.Core.Interfaces;
@@ -23,26 +22,29 @@ namespace NFTure.Application.Services
             _userActivityService = userActivityService;
         }
 
-        public async Task<IEnumerable<NftModel>> GetNftsByOwnerIdAsync(Guid ownerId)
+        public async Task<Nft> GetNftByIdAsync(Guid id)
         {
-            var nfts = await _nftRepository.GetAllUserNftsAsync(ownerId);
-
-            return ObjectMapper.Mapper.Map<IEnumerable<NftModel>>(nfts);
+            return await _nftRepository.GetByIdAsync(id);
         }
 
-        public async Task<NftModel> AddNewNftAsync(NftModel nftModel)
+        public async Task<IEnumerable<Nft>> GetNftsByOwnerIdAsync(Guid ownerId)
         {
-            if (nftModel is null)
+            return await _nftRepository.GetAllUserNftsAsync(ownerId);
+        }
+
+        public async Task<Nft> AddNewNftAsync(Nft nft)
+        {
+            if (nft is null)
             {
-                throw new ArgumentNullException(nameof(nftModel), "New NFT can't be null.");
+                throw new ArgumentNullException(nameof(nft), "New NFT can't be null.");
             }
 
             // More serious check for NFT unique
-            nftModel.Id = Guid.NewGuid();
-            nftModel.CreatedDateUtc = DateTimeOffset.UtcNow;
+            nft.Id = Guid.NewGuid();
+            nft.CreatedDateUtc = DateTimeOffset.UtcNow;
 
             //TODO: add check for nullability for required fields
-            var mappedNftEntity = ObjectMapper.Mapper.Map<Nft>(nftModel);
+            var mappedNftEntity = ObjectMapper.Mapper.Map<Nft>(nft);
 
             if (mappedNftEntity is null)
             {
@@ -59,12 +61,10 @@ namespace NFTure.Application.Services
                 newNft.OwnerId,
                 typeof(Nft));
 
-            var newMappedEntity = ObjectMapper.Mapper.Map<NftModel>(newNft);
-
-            return newMappedEntity;
+            return newNft;
         }
 
-        public async Task UpdateNftAsync(NftModel newNft)
+        public async Task UpdateNftAsync(Nft newNft)
         {
             await ValidateNftIfNotExists(newNft.Id);
 

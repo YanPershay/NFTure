@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using NFTure.Application.Models;
+using NFTure.Core.Entities;
 using NFTure.Core.Entities.Auth;
 using NFTure.Web.DTOs.NFT;
 using NFTure.Web.DTOs.User;
@@ -10,9 +10,9 @@ namespace NFTure.Web.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<NftModel, NftResponse>().ReverseMap();
-            CreateMap<CreateNftRequest, NftModel>().ReverseMap();
-            CreateMap<UpdateNftRequest, NftModel>().ReverseMap();
+            CreateMap<Nft, NftResponse>().ReverseMap();
+            CreateMap<CreateNftRequest, Nft>().ReverseMap();
+            CreateMap<UpdateNftRequest, Nft>().ReverseMap();
             CreateMap<UserSignUpRequest, User>().ReverseMap();
         }
     }

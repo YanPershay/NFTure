@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using NFTure.Application.Models;
 using NFTure.Core.Entities;
 
 namespace NFTure.Application.Mapper
@@ -23,8 +22,6 @@ namespace NFTure.Application.Mapper
     public class ModelMapperProfile : Profile
     {
         public ModelMapperProfile()
-        {
-            CreateMap<Nft, NftModel>().ReverseMap();
-        }
+        { }
     }
 }
